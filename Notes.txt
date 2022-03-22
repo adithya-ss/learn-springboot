@@ -1,0 +1,11 @@
+Springboot:
+
+- Framework to build enterprise applications in Java.
+- Platform to build both backend and web applications
+
+Generate a bootstrapped springboot project structure: https://start.spring.io/
+
+Resources:
+	a. static: All the web resources live for web applications
+	b. templates: All the templates for web applications
+	c. application.properties: Properties for the application being built. Properties for different envs can be defined.
