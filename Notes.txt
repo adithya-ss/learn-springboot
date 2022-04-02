@@ -35,3 +35,8 @@ Since interface implementations can be many, there should be a way to distinguis
 
 @RestController - Expose end points. 
 @PostMapping - Adding a resource to the server.
+
+@JsonProperty - Convert a json property into java class. 
+@RequestBody - Receive JSON payload from the actual body, inside the API. Convert the JSON object into our custom Object.
+@RequestMapping - Create an end point. Path is specified here.
+@GetMapping - Method to be served as a GET request.
