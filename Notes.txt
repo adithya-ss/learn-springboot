@@ -8,4 +8,30 @@ Generate a bootstrapped springboot project structure: https://start.spring.io/
 Resources:
 	a. static: All the web resources live for web applications
 	b. templates: All the templates for web applications
-	c. application.properties: Properties for the application being built. Properties for different envs can be defined.
+	c. application.properties: Properties for the application being built. Properties for different envs can be defined (dev, test, prod etc).
+
+Each package of this project represents a perticular layer (API, Service and Data Access)
+
+Model = Entity (End User - personName and personId)
+Model - Getters and setters - Implementation of data encapsulation.
+
+DAO - Interface (Operations allowed for anything which intends to implement this interface)
+
+Service - Something which performs an operation.
+
+API - Controllers
+
+Dependency Injection: 
+a. Technique in which an object receives other objects that it depends on, called dependencies.
+b. Typically, the receiving object is called a client and the passed-in ('injected') object is called a service. The code that passes the service to the client is called the injector. 
+c. Instead of the client specifying which service it will use, the injector tells the client what service to use. The 'injection' refers to the passing of a dependency (a service) into the client that uses it.
+
+When a DAO is not instantiated, annotations would be used to instantiate beans.
+This is done so that a class can be instatiated as a bean for it to be injectable in other classes, by specifying @Repository.
+
+@Service - For services
+@Autowired - Injector/Injection.
+Since interface implementations can be many, there should be a way to distinguish each implementation. This is acheived by using @Qualifier
+
+@RestController - Expose end points. 
+@PostMapping - Adding a resource to the server.
