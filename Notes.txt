@@ -40,3 +40,15 @@ Since interface implementations can be many, there should be a way to distinguis
 @RequestBody - Receive JSON payload from the actual body, inside the API. Convert the JSON object into our custom Object.
 @RequestMapping - Create an end point. Path is specified here.
 @GetMapping - Method to be served as a GET request.
+
+For validation to avoid empty/blank data, the following dependency has to be added in pom.xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+Once the above dependency is added, right click on Maven -> Reload Project. This will install the missing dependencies. (For IntelliJ)
+
+@NotBlank - Data/String is not blank. Different from Null. String might not be null, but might just have blank characters.
+@Valid - Data/String is valid. 
+@NotNull - Data/String is not null.

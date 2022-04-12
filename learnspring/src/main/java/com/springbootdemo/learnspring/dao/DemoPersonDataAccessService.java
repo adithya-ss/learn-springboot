@@ -32,11 +32,25 @@ public class DemoPersonDataAccessService implements PersonDao {
 
     @Override
     public int deletePersonById(UUID id) {
-        return 0;
+        Optional<Person> thisPerson = selectPersonById(id);
+        if (!thisPerson.isPresent()) {
+            return 0;
+        }
+        DATABASE.remove(thisPerson.get());
+        return 1;
     }
 
     @Override
-    public int updatePersonById(UUID id, Person person) {
-        return 0;
+    public int updatePersonById(UUID id, Person updateThisPerson) {
+        return selectPersonById(id)
+                .map(per -> {
+                    int indexOfPersonToUpdate = DATABASE.indexOf(per);
+                    if (indexOfPersonToUpdate >= 0) {
+                        DATABASE.set(indexOfPersonToUpdate, new Person(id, updateThisPerson.getName()));
+                        return 1;
+                    }
+                    return 0;
+                })
+                .orElse(0);
     }
 }
