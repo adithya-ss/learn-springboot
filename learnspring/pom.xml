@@ -14,7 +14,7 @@
 	<name>learnspring</name>
 	<description>Demo project to learn Spring Boot</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>12</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,6 +39,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>9</source>
+					<target>9</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
